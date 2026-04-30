@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom";
 import { Nav, Footer } from "@/components/Layout";
 import Reveal from "@/components/Reveal";
 import { PROJECTS, IMGS } from "@/data/projects";
+import SEO from "@/components/SEO";
 
 const HERO_IMAGE = IMGS.p1;
 const G = "hsl(43,40%,60%)";
@@ -42,6 +43,13 @@ export default function Index() {
   return (
     <div style={{ background: BG, minHeight: "100vh", color: "#e2d9c8" }}>
       <Nav />
+
+      <SEO
+        title="ТОД Строй — Дизайнерский ремонт квартир в Москве | С 2008 года"
+        description="ТОД Строй — дизайнерский и капитальный ремонт квартир, офисов, загородных домов в Москве. Полный цикл под ключ. От 20 000 руб/м². Опыт с 2008 года. Консультация бесплатна."
+        canonical="/"
+        keywords="ремонт квартир Москва, дизайнерский ремонт, капитальный ремонт, ремонт под ключ, ТОД строй"
+      />
 
       {/* ── HERO ── split layout */}
       <section style={{ position: "relative", height: "100vh", display: "flex", overflow: "hidden" }}>
@@ -84,7 +92,7 @@ export default function Index() {
 
         {/* Right image */}
         <div style={{ position: "relative", flex: 1, overflow: "hidden" }}>
-          <img src={HERO_IMAGE} alt="TOD STROY" style={{ width: "100%", height: "100%", objectFit: "cover" }} />
+          <img src={HERO_IMAGE} alt="Дизайнерский ремонт квартир в Москве — ТОД Строй, реализованный объект" style={{ width: "100%", height: "100%", objectFit: "cover" }} />
           <div style={{ position: "absolute", inset: 0, background: "linear-gradient(90deg, rgba(13,13,13,0.6) 0%, rgba(13,13,13,0.1) 40%, rgba(13,13,13,0.2) 100%)" }} />
           <div style={{ position: "absolute", bottom: "48px", right: "40px", fontFamily: "'Montserrat', sans-serif", fontSize: "11px", fontWeight: 300, color: "rgba(226,217,200,0.5)", letterSpacing: "0.1em", display: "flex", alignItems: "center", gap: "6px" }}>
             <span style={{ fontSize: "20px", fontWeight: 600, color: G }}>01</span>
@@ -172,7 +180,7 @@ export default function Index() {
         <div style={{ maxWidth: "1100px", margin: "0 auto 100px", display: "grid", gridTemplateColumns: "1fr 320px", gap: "2px" }}>
           <Reveal>
             <div style={{ position: "relative", height: "560px", overflow: "hidden", cursor: "pointer" }} onClick={() => navigate(`/projects/${PROJECTS[activeProject].id}`)}>
-              <img src={PROJECTS[activeProject].cover} alt={PROJECTS[activeProject].title}
+              <img src={PROJECTS[activeProject].cover} alt={`Ремонт квартиры — проект ${PROJECTS[activeProject].title}, ${PROJECTS[activeProject].location}`}
                 style={{ width: "100%", height: "100%", objectFit: "cover", transition: "transform 0.8s cubic-bezier(0.25,0.46,0.45,0.94)" }}
                 onMouseEnter={e => (e.currentTarget.style.transform = "scale(1.04)")}
                 onMouseLeave={e => (e.currentTarget.style.transform = "scale(1)")}
@@ -202,7 +210,7 @@ export default function Index() {
                   border: i === activeProject ? `1px solid rgba(184,160,106,0.35)` : "1px solid transparent",
                   transition: "border-color 0.3s",
                 }}>
-                  <img src={p.cover} alt={p.title} style={{ width: "100%", height: "100%", objectFit: "cover", transition: "transform 0.6s ease", filter: i === activeProject ? "none" : "brightness(0.35) saturate(0)" }}
+                  <img src={p.cover} alt={`Портфолио ТОД Строй — ${p.title}`} style={{ width: "100%", height: "100%", objectFit: "cover", transition: "transform 0.6s ease", filter: i === activeProject ? "none" : "brightness(0.35) saturate(0)" }}
                     onMouseEnter={e => (e.currentTarget.style.transform = "scale(1.06)")}
                     onMouseLeave={e => (e.currentTarget.style.transform = "scale(1)")}
                   />
@@ -295,7 +303,7 @@ export default function Index() {
             { img: IMGS.p2, title: "Коммерческие объекты", sub: "Офисы, торговые центры, гостиницы", path: "/commercial" },
           ].map(item => (
             <div key={item.path} onClick={() => navigate(item.path)} style={{ position: "relative", height: "440px", overflow: "hidden", cursor: "pointer" }}>
-              <img src={item.img} alt={item.title}
+              <img src={item.img} alt={`${item.title} — ремонт в Москве, ТОД Строй`}
                 style={{ width: "100%", height: "100%", objectFit: "cover", transition: "transform 0.8s ease" }}
                 onMouseEnter={e => (e.currentTarget.style.transform = "scale(1.04)")}
                 onMouseLeave={e => (e.currentTarget.style.transform = "scale(1)")}

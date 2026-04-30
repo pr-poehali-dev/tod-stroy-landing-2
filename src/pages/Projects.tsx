@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom";
 import Layout from "@/components/Layout";
 import Reveal from "@/components/Reveal";
 import { PROJECTS } from "@/data/projects";
+import SEO, { SCHEMA_BREADCRUMB } from "@/components/SEO";
 
 const G = "hsl(43,40%,60%)";
 const BG = "#0d0d0d";
@@ -20,6 +21,13 @@ export default function Projects() {
 
   return (
     <Layout>
+      <SEO
+        title="Портфолио — реализованные проекты ремонта квартир и домов"
+        description="Портфолио ТОД Строй: реализованные проекты дизайнерского ремонта квартир, загородных домов и офисов в Москве. Фото работ, описания объектов, сроки и площади."
+        canonical="/projects"
+        keywords="портфолио ремонт квартир, примеры ремонта, фото ремонта квартиры"
+        schema={SCHEMA_BREADCRUMB([{ name: "Главная", url: "/" }, { name: "Проекты", url: "/projects" }])}
+      />
       <div style={{ background: BG, paddingTop: "68px" }}>
 
         {/* Hero */}
@@ -64,7 +72,7 @@ export default function Projects() {
                   onClick={() => navigate(`/projects/${p.id}`)}
                   style={{ position: "relative", height: i === 0 ? "560px" : "420px", overflow: "hidden", cursor: "pointer" }}
                 >
-                  <img src={p.cover} alt={p.title}
+                  <img src={p.cover} alt={`${p.title} — ${p.typeLabel} ремонт в ${p.location}, ТОД Строй`}
                     style={{ width: "100%", height: "100%", objectFit: "cover", transition: "transform 0.8s cubic-bezier(0.25,0.46,0.45,0.94)" }}
                     onMouseEnter={e => (e.currentTarget.style.transform = "scale(1.05)")}
                     onMouseLeave={e => (e.currentTarget.style.transform = "scale(1)")}

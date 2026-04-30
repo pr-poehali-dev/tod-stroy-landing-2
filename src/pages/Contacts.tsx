@@ -1,6 +1,7 @@
 import { useState } from "react";
 import Layout from "@/components/Layout";
 import Reveal from "@/components/Reveal";
+import SEO, { SCHEMA_BREADCRUMB } from "@/components/SEO";
 
 const G = "hsl(43,40%,60%)";
 const BG = "#0d0d0d";
@@ -36,6 +37,13 @@ export default function Contacts() {
 
   return (
     <Layout>
+      <SEO
+        title="Контакты — ТОД Строй, ремонт квартир в Москве"
+        description="Свяжитесь с ТОД Строй: +7 (906) 001-46-66, info@todstr.ru. Москва, ул. Профсоюзная, д. 56. Консультация бесплатна. Ответим в течение 15 минут."
+        canonical="/contacts"
+        keywords="контакты ТОД строй, телефон ремонт квартир Москва, заказать ремонт квартиры"
+        schema={SCHEMA_BREADCRUMB([{ name: "Главная", url: "/" }, { name: "Контакты", url: "/contacts" }])}
+      />
       <div style={{ background: BG, paddingTop: "68px" }}>
 
         {/* Header */}

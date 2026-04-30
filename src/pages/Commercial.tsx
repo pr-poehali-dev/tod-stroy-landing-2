@@ -2,6 +2,7 @@ import { useNavigate } from "react-router-dom";
 import Layout from "@/components/Layout";
 import Reveal from "@/components/Reveal";
 import { IMGS, PROJECTS } from "@/data/projects";
+import SEO, { SCHEMA_BREADCRUMB, SCHEMA_SERVICE } from "@/components/SEO";
 
 const G = "hsl(43,40%,60%)";
 const BG = "#0d0d0d";
@@ -20,11 +21,21 @@ export default function Commercial() {
 
   return (
     <Layout>
+      <SEO
+        title="Ремонт офисов и коммерческих объектов в Москве — ТОД Строй"
+        description="ТОД Строй: ремонт офисов, торговых помещений и коммерческой недвижимости в Москве от 20 000 руб/м². Соблюдение сроков, управление подрядчиками, сдача под ключ."
+        canonical="/commercial"
+        keywords="ремонт офисов Москва, ремонт коммерческих помещений, ремонт торговых центров"
+        schema={[
+          SCHEMA_BREADCRUMB([{ name: "Главная", url: "/" }, { name: "Коммерческие объекты", url: "/commercial" }]),
+          SCHEMA_SERVICE("Ремонт офисов", "Ремонт коммерческих объектов в Москве в срок и в бюджет", "20000"),
+        ]}
+      />
       <div style={{ background: BG, paddingTop: "68px" }}>
 
         {/* Hero */}
         <section style={{ position: "relative", height: "80vh", overflow: "hidden" }}>
-          <img src={IMGS.p2} alt="Коммерческие объекты TOD STROY" style={{ width: "100%", height: "100%", objectFit: "cover", objectPosition: "center 35%" }} />
+          <img src={IMGS.p2} alt="Ремонт офисов и коммерческих объектов в Москве — ТОД Строй, от 20 000 руб/м²" style={{ width: "100%", height: "100%", objectFit: "cover", objectPosition: "center 35%" }} />
           <div style={{ position: "absolute", inset: 0, background: "linear-gradient(to right, rgba(13,13,13,0.93) 0%, rgba(13,13,13,0.35) 60%)" }} />
           <div style={{ position: "absolute", inset: 0, display: "flex", flexDirection: "column", justifyContent: "flex-end", padding: "80px 56px", zIndex: 2 }}>
             <div style={{ maxWidth: "1100px", margin: "0 auto", width: "100%" }}>
@@ -113,7 +124,7 @@ export default function Commercial() {
                 <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(320px, 1fr))", gap: "2px" }}>
                   {commercialProjects.map(p => (
                     <div key={p.id} onClick={() => navigate(`/projects/${p.id}`)} style={{ position: "relative", height: "420px", overflow: "hidden", cursor: "pointer" }}>
-                      <img src={p.cover} alt={p.title}
+                      <img src={p.cover} alt={`${p.title} — ремонт коммерческого объекта в ${p.location}, ТОД Строй`}
                         style={{ width: "100%", height: "100%", objectFit: "cover", transition: "transform 0.7s ease" }}
                         onMouseEnter={e => (e.currentTarget.style.transform = "scale(1.05)")}
                         onMouseLeave={e => (e.currentTarget.style.transform = "scale(1)")}

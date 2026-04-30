@@ -3,6 +3,7 @@ import Layout from "@/components/Layout";
 import Reveal from "@/components/Reveal";
 import { PROJECTS } from "@/data/projects";
 import Icon from "@/components/ui/icon";
+import SEO, { SCHEMA_BREADCRUMB, SCHEMA_ARTICLE } from "@/components/SEO";
 
 const G = "hsl(43,40%,60%)";
 const BG = "#0d0d0d";
@@ -28,6 +29,22 @@ export default function ProjectDetail() {
 
   return (
     <Layout>
+      <SEO
+        title={`${project.title} — ${project.typeLabel} в Москве`}
+        description={`${project.title}: ${project.task} Площадь ${project.area}, срок ${project.duration}. Посмотрите фото и этапы работ ТОД Строй.`}
+        canonical={`/projects/${project.id}`}
+        ogImage={project.cover}
+        ogType="article"
+        keywords={`${project.title}, ${project.typeLabel}, ремонт ${project.location}, ${project.tags.join(", ")}`}
+        schema={[
+          SCHEMA_BREADCRUMB([
+            { name: "Главная", url: "/" },
+            { name: "Проекты", url: "/projects" },
+            { name: project.title, url: `/projects/${project.id}` },
+          ]),
+          SCHEMA_ARTICLE(project.title, project.task, project.cover, `${project.year}-01-01`),
+        ]}
+      />
       <div style={{ background: BG, paddingTop: "68px" }}>
 
         {/* Cover — full screen */}

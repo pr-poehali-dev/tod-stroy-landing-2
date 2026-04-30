@@ -2,6 +2,7 @@ import { useNavigate } from "react-router-dom";
 import Layout from "@/components/Layout";
 import Reveal from "@/components/Reveal";
 import { IMGS } from "@/data/projects";
+import SEO, { SCHEMA_BREADCRUMB, SCHEMA_SERVICE } from "@/components/SEO";
 
 const G = "hsl(43,40%,60%)";
 const BG = "#0d0d0d";
@@ -50,6 +51,16 @@ export default function Services() {
 
   return (
     <Layout>
+      <SEO
+        title="Услуги — дизайнерский, капитальный, косметический ремонт в Москве"
+        description="Услуги ТОД Строй: дизайнерский ремонт от 35 000 руб/м², капитальный от 32 000 руб/м², ремонт офисов от 20 000 руб/м², косметический от 25 000 руб/м². Москва."
+        canonical="/services"
+        keywords="стоимость ремонта квартиры Москва, цены на ремонт, дизайнерский ремонт цена, капитальный ремонт цена"
+        schema={[
+          SCHEMA_BREADCRUMB([{ name: "Главная", url: "/" }, { name: "Услуги", url: "/services" }]),
+          SCHEMA_SERVICE("Дизайнерский ремонт квартир", "Авторский ремонт с дизайн-проектом под ключ в Москве", "35000"),
+        ]}
+      />
       <div style={{ background: BG, paddingTop: "68px" }}>
 
         {/* Hero */}
@@ -101,7 +112,7 @@ export default function Services() {
 
                   {/* Image side */}
                   <div style={{ height: "440px", overflow: "hidden", order: i % 2 === 0 ? 2 : 1 }}>
-                    <img src={s.image} alt={s.title}
+                    <img src={s.image} alt={`${s.title} в Москве — ${s.subtitle}, ТОД Строй`}
                       style={{ width: "100%", height: "100%", objectFit: "cover", transition: "transform 0.8s ease" }}
                       onMouseEnter={e => (e.currentTarget.style.transform = "scale(1.04)")}
                       onMouseLeave={e => (e.currentTarget.style.transform = "scale(1)")}

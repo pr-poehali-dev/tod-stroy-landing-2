@@ -2,6 +2,7 @@ import { useNavigate } from "react-router-dom";
 import Layout from "@/components/Layout";
 import Reveal from "@/components/Reveal";
 import { IMGS } from "@/data/projects";
+import SEO, { SCHEMA_BREADCRUMB } from "@/components/SEO";
 
 const G = "hsl(43,40%,60%)";
 const BG = "#0d0d0d";
@@ -79,6 +80,13 @@ export default function Process() {
 
   return (
     <Layout>
+      <SEO
+        title="Процесс работы — как мы делаем ремонт квартир в Москве"
+        description="Узнайте, как ТОД Строй выполняет ремонт квартир: анализ объекта, дизайн-проект, планирование бюджета, реализация, контроль качества. Прозрачный процесс без сюрпризов."
+        canonical="/process"
+        keywords="этапы ремонта квартиры, как делается ремонт, процесс ремонта"
+        schema={SCHEMA_BREADCRUMB([{ name: "Главная", url: "/" }, { name: "Процесс работы", url: "/process" }])}
+      />
       <div style={{ background: BG, paddingTop: "68px" }}>
 
         {/* Hero */}

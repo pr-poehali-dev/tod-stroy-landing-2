@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+
+  <!-- Главная -->
+  <url>
+    <loc>https://todstr.ru/</loc>
+    <lastmod>2024-11-01</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+    <image:image>
+      <image:loc>https://cdn.poehali.dev/projects/c962f263-d678-4c89-9b1b-51790f1c55e3/files/27d058df-1613-40ce-a859-9f969b97a803.jpg</image:loc>
+      <image:title>ТОД Строй — дизайнерский ремонт квартир в Москве</image:title>
+    </image:image>
+  </url>
+
+  <!-- О компании -->
+  <url>
+    <loc>https://todstr.ru/about</loc>
+    <lastmod>2024-11-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Услуги -->
+  <url>
+    <loc>https://todstr.ru/services</loc>
+    <lastmod>2024-11-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- Процесс работы -->
+  <url>
+    <loc>https://todstr.ru/process</loc>
+    <lastmod>2024-11-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- Проекты -->
+  <url>
+    <loc>https://todstr.ru/projects</loc>
+    <lastmod>2024-11-01</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <image:image>
+      <image:loc>https://cdn.poehali.dev/projects/c962f263-d678-4c89-9b1b-51790f1c55e3/files/27d058df-1613-40ce-a859-9f969b97a803.jpg</image:loc>
+      <image:title>Портфолио ТОД Строй — реализованные объекты</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://cdn.poehali.dev/projects/c962f263-d678-4c89-9b1b-51790f1c55e3/files/7bbec009-7e0a-418e-bf19-2be219177c1c.jpg</image:loc>
+      <image:title>Дизайнерский ремонт квартиры — ТОД Строй</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://cdn.poehali.dev/projects/c962f263-d678-4c89-9b1b-51790f1c55e3/files/24e30f65-4fa6-4a56-8cd8-5ba326c6db45.jpg</image:loc>
+      <image:title>Ремонт загородного дома — ТОД Строй</image:title>
+    </image:image>
+  </url>
+
+  <!-- Проект 1 -->
+  <url>
+    <loc>https://todstr.ru/projects/skandinavskiy-dom</loc>
+    <lastmod>2024-11-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://cdn.poehali.dev/projects/c962f263-d678-4c89-9b1b-51790f1c55e3/files/27d058df-1613-40ce-a859-9f969b97a803.jpg</image:loc>
+      <image:title>Ремонт дома в скандинавском стиле — Пушкинский район МО</image:title>
+    </image:image>
+  </url>
+
+  <!-- Проект 2 -->
+  <url>
+    <loc>https://todstr.ru/projects/dizaynersky-yuo</loc>
+    <lastmod>2024-11-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://cdn.poehali.dev/projects/c962f263-d678-4c89-9b1b-51790f1c55e3/files/7bbec009-7e0a-418e-bf19-2be219177c1c.jpg</image:loc>
+      <image:title>Дизайнерский ремонт трёхкомнатной квартиры в ЮАО Москвы</image:title>
+    </image:image>
+  </url>
+
+  <!-- Проект 3 -->
+  <url>
+    <loc>https://todstr.ru/projects/kvartira-studiya</loc>
+    <lastmod>2024-11-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://cdn.poehali.dev/projects/c962f263-d678-4c89-9b1b-51790f1c55e3/files/24e30f65-4fa6-4a56-8cd8-5ba326c6db45.jpg</image:loc>
+      <image:title>Ремонт квартиры-студии в Москве</image:title>
+    </image:image>
+  </url>
+
+  <!-- Частные резиденции -->
+  <url>
+    <loc>https://todstr.ru/residential</loc>
+    <lastmod>2024-11-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Коммерческие объекты -->
+  <url>
+    <loc>https://todstr.ru/commercial</loc>
+    <lastmod>2024-11-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Контакты -->
+  <url>
+    <loc>https://todstr.ru/contacts</loc>
+    <lastmod>2024-11-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+</urlset>

@@ -2,6 +2,7 @@ import { useNavigate } from "react-router-dom";
 import Layout from "@/components/Layout";
 import Reveal from "@/components/Reveal";
 import { IMGS, PROJECTS } from "@/data/projects";
+import SEO, { SCHEMA_BREADCRUMB, SCHEMA_SERVICE } from "@/components/SEO";
 
 const G = "hsl(43,40%,60%)";
 const BG = "#0d0d0d";
@@ -20,11 +21,21 @@ export default function Residential() {
 
   return (
     <Layout>
+      <SEO
+        title="Ремонт квартир и загородных домов в Москве — ТОД Строй"
+        description="ТОД Строй: дизайнерский ремонт квартир, загородных домов и частных резиденций в Москве. Индивидуальный подход, первоклассные материалы, авторский надзор."
+        canonical="/residential"
+        keywords="ремонт квартир под ключ, ремонт загородного дома, дизайнерский ремонт частного дома"
+        schema={[
+          SCHEMA_BREADCRUMB([{ name: "Главная", url: "/" }, { name: "Частные объекты", url: "/residential" }]),
+          SCHEMA_SERVICE("Дизайнерский ремонт квартир", "Авторский ремонт квартир и домов в Москве", "35000"),
+        ]}
+      />
       <div style={{ background: BG, paddingTop: "68px" }}>
 
         {/* Hero — full atmosphere */}
         <section style={{ position: "relative", height: "90vh", overflow: "hidden" }}>
-          <img src={IMGS.p1} alt="Частные резиденции TOD STROY" style={{ width: "100%", height: "100%", objectFit: "cover", objectPosition: "center" }} />
+          <img src={IMGS.p1} alt="Дизайнерский ремонт квартир и загородных домов в Москве — ТОД Строй" style={{ width: "100%", height: "100%", objectFit: "cover", objectPosition: "center" }} />
           <div style={{ position: "absolute", inset: 0, background: "linear-gradient(to top, rgba(13,13,13,0.95) 0%, rgba(13,13,13,0.15) 50%, rgba(13,13,13,0.4) 100%)" }} />
 
           {/* Corner decor */}
@@ -82,7 +93,7 @@ export default function Residential() {
           <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr 1fr", gap: "2px" }}>
             {[IMGS.p1, IMGS.p2, IMGS.p3].map((img, i) => (
               <div key={i} style={{ height: "400px", overflow: "hidden" }}>
-                <img src={img} alt={`Резиденция ${i + 1}`}
+                <img src={img} alt={`Дизайнерский ремонт частной резиденции в Москве — пример работы ТОД Строй ${i + 1}`}
                   style={{ width: "100%", height: "100%", objectFit: "cover", transition: "transform 0.8s ease" }}
                   onMouseEnter={e => (e.currentTarget.style.transform = "scale(1.06)")}
                   onMouseLeave={e => (e.currentTarget.style.transform = "scale(1)")}
@@ -124,7 +135,7 @@ export default function Residential() {
                 <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(320px, 1fr))", gap: "2px" }}>
                   {residentialProjects.map(p => (
                     <div key={p.id} onClick={() => navigate(`/projects/${p.id}`)} style={{ position: "relative", height: "440px", overflow: "hidden", cursor: "pointer" }}>
-                      <img src={p.cover} alt={p.title}
+                      <img src={p.cover} alt={`${p.title} — дизайнерский ремонт квартиры в ${p.location}, ТОД Строй`}
                         style={{ width: "100%", height: "100%", objectFit: "cover", transition: "transform 0.7s ease" }}
                         onMouseEnter={e => (e.currentTarget.style.transform = "scale(1.05)")}
                         onMouseLeave={e => (e.currentTarget.style.transform = "scale(1)")}

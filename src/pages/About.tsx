@@ -2,6 +2,7 @@ import { useNavigate } from "react-router-dom";
 import Layout from "@/components/Layout";
 import Reveal from "@/components/Reveal";
 import { IMGS } from "@/data/projects";
+import SEO, { SCHEMA_BREADCRUMB } from "@/components/SEO";
 
 const G = "hsl(43,40%,60%)";
 const BG = "#0d0d0d";
@@ -25,11 +26,18 @@ export default function About() {
 
   return (
     <Layout>
+      <SEO
+        title="О компании ТОД Строй — дизайнерский ремонт в Москве с 2008 года"
+        description="ТОД Строй — компания по дизайнерскому ремонту квартир в Москве с 2008 года. Более 200 реализованных объектов. Индивидуальный подход, качественные материалы, соблюдение сроков."
+        canonical="/about"
+        keywords="о компании ТОД строй, ремонт квартир Москва, компания ремонт"
+        schema={SCHEMA_BREADCRUMB([{ name: "Главная", url: "/" }, { name: "О компании", url: "/about" }])}
+      />
       <div style={{ background: BG, paddingTop: "68px" }}>
 
         {/* Hero */}
         <section style={{ position: "relative", height: "70vh", overflow: "hidden" }}>
-          <img src={IMGS.p2} alt="О компании TOD STROY" style={{ width: "100%", height: "100%", objectFit: "cover", objectPosition: "center 30%" }} />
+          <img src={IMGS.p2} alt="ТОД Строй — компания по дизайнерскому ремонту квартир в Москве с 2008 года" style={{ width: "100%", height: "100%", objectFit: "cover", objectPosition: "center 30%" }} />
           <div style={{ position: "absolute", inset: 0, background: "linear-gradient(135deg, rgba(13,13,13,0.92) 0%, rgba(13,13,13,0.4) 60%)" }} />
           <div style={{ position: "absolute", inset: 0, display: "flex", flexDirection: "column", justifyContent: "flex-end", padding: "64px 56px", zIndex: 2 }}>
             <div style={{ maxWidth: "1100px", margin: "0 auto", width: "100%" }}>
@@ -107,7 +115,7 @@ export default function About() {
                   { img: IMGS.p3, title: "Загородные дома", text: "Строительство и отделка загородной недвижимости", path: "/residential" },
                 ].map((item, i) => (
                   <div key={i} onClick={() => navigate(item.path)} style={{ position: "relative", height: "360px", overflow: "hidden", cursor: "pointer" }}>
-                    <img src={item.img} alt={item.title}
+                    <img src={item.img} alt={`${item.title} — ${item.text}, ТОД Строй Москва`}
                       style={{ width: "100%", height: "100%", objectFit: "cover", transition: "transform 0.8s ease" }}
                       onMouseEnter={e => (e.currentTarget.style.transform = "scale(1.05)")}
                       onMouseLeave={e => (e.currentTarget.style.transform = "scale(1)")}
