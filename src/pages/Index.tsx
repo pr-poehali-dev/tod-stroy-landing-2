@@ -99,7 +99,7 @@ export default function Index() {
       <Reveal>
         <div style={{ borderTop: "1px solid rgba(184,160,106,0.12)", borderBottom: "1px solid rgba(184,160,106,0.12)", padding: "44px 56px" }}>
           <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(150px, 1fr))", gap: "32px", maxWidth: "1000px", margin: "0 auto" }}>
-            {[["12+", "лет на рынке"], ["200+", "реализованных объектов"], ["450 000", "м² построено"], ["98%", "проектов сданы в срок"]].map(([num, label]) => (
+            {[["16+", "лет на рынке"], ["200+", "реализованных объектов"], ["2008", "год основания"], ["98%", "проектов сданы в срок"]].map(([num, label]) => (
               <div key={label} style={{ display: "flex", flexDirection: "column", gap: "6px" }}>
                 <div style={{ fontFamily: "'Montserrat', sans-serif", fontSize: "38px", fontWeight: 700, color: G, lineHeight: 1, letterSpacing: "-0.02em" }}>{num}</div>
                 <div style={{ fontFamily: "'Montserrat', sans-serif", fontSize: "9px", fontWeight: 400, letterSpacing: "0.2em", color: "rgba(226,217,200,0.35)", textTransform: "uppercase" }}>{label}</div>
@@ -121,7 +121,7 @@ export default function Index() {
                 </h2>
                 <div style={{ width: "40px", height: "1px", background: G, marginBottom: "28px" }} />
                 <p style={{ fontFamily: "'Montserrat', sans-serif", fontSize: "13px", fontWeight: 300, lineHeight: 1.9, color: "rgba(226,217,200,0.55)", marginBottom: "32px" }}>
-                  Контролируем каждый этап — от концепции до реализации. Работаем с объектами, где важна точность, сроки и уровень исполнения.
+                  Полный спектр работ по ремонту помещений — от разработки дизайн-проекта до установки освещения, расстановки мебели и генеральной уборки. На рынке с 2008 года.
                 </p>
                 <button onClick={() => navigate("/about")} style={{
                   background: "none", border: "none", cursor: "pointer",
@@ -234,10 +234,10 @@ export default function Index() {
             </div>
             <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(220px, 1fr))", gap: "1px", background: "rgba(184,160,106,0.08)" }}>
               {[
-                { num: "01", title: "Строительство", text: "Полный цикл от нулевого цикла до сдачи объекта." },
-                { num: "02", title: "Ремонт премиум", text: "Реконструкция интерьеров без компромиссов по качеству." },
-                { num: "03", title: "Проектирование", text: "Архитектурная концепция и рабочая документация." },
-                { num: "04", title: "Управление", text: "Технический заказчик — полная ответственность за результат." },
+                { num: "01", title: "Дизайнерский ремонт", text: "Авторский интерьер с дизайн-проектом — от 35 000 руб/м²." },
+                { num: "02", title: "Капитальный ремонт", text: "Полный цикл под ключ: от демонтажа до финишной отделки — от 32 000 руб/м²." },
+                { num: "03", title: "Ремонт офисов", text: "Коммерческие объекты в срок и в бюджет — от 20 000 руб/м²." },
+                { num: "04", title: "Косметический ремонт", text: "Быстрое обновление без перестройки — от 25 000 руб/м²." },
               ].map((s, i) => (
                 <div key={i} onClick={() => navigate("/services")} style={{ background: BG2, padding: "40px 28px", cursor: "pointer", position: "relative", overflow: "hidden", transition: "background 0.3s" }}
                   onMouseEnter={e => (e.currentTarget.style.background = "rgba(184,160,106,0.04)")}
@@ -322,7 +322,7 @@ export default function Index() {
               ПОЛУЧИТЕ РАСЧЁТ<br />СТОИМОСТИ ПРОЕКТА
             </h2>
             <p style={{ fontFamily: "'Montserrat', sans-serif", fontSize: "12px", fontWeight: 300, color: "rgba(226,217,200,0.4)", lineHeight: 1.9, letterSpacing: "0.04em", marginBottom: "52px" }}>
-              Выезд специалиста и предварительный расчёт — без обязательств.<br />Ответим в течение <span style={{ color: G }}>15 минут.</span>
+              Выезд специалиста и предварительный расчёт — без обязательств.<br />Консультация бесплатна. Ответим в течение <span style={{ color: G }}>15 минут.</span>
             </p>
 
             {sent ? (

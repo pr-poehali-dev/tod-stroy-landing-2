@@ -6,9 +6,10 @@ const G = "hsl(43,40%,60%)";
 const BG = "#0d0d0d";
 
 const CONTACT_INFO = [
-  { label: "ТЕЛЕФОН", value: "+7 (495) 123-45-67", sub: "ПН–ПТ, 9:00–19:00", href: "tel:+74951234567" },
-  { label: "EMAIL", value: "info@todstroy.ru", sub: "Ответим в течение дня", href: "mailto:info@todstroy.ru" },
-  { label: "ОФИС", value: "Москва, Рублёвское шоссе, 20", sub: "По предварительной записи", href: null },
+  { label: "ТЕЛЕФОН", value: "+7 (906) 001-46-66", sub: "ПН–ПТ, 9:00–19:00", href: "tel:+79060014666" },
+  { label: "EMAIL", value: "info@todstr.ru", sub: "Ответим в течение дня", href: "mailto:info@todstr.ru" },
+  { label: "ОФИС", value: "Москва, ул. Профсоюзная, д. 56, эт. 17, оф. 14", sub: "По предварительной записи", href: null },
+  { label: "TELEGRAM / WHATSAPP", value: "+7 (906) 001-46-66", sub: "Напишите в мессенджер", href: "https://t.me/+79060014666" },
 ];
 
 export default function Contacts() {
@@ -170,14 +171,36 @@ export default function Contacts() {
                   ))}
                 </div>
 
+                {/* Messengers */}
+                <div style={{ marginTop: "32px", display: "flex", gap: "12px" }}>
+                  <a href="https://t.me/+79060014666" target="_blank" rel="noopener noreferrer" style={{
+                    flex: 1, display: "flex", alignItems: "center", justifyContent: "center", gap: "8px",
+                    background: "transparent", border: `1px solid rgba(184,160,106,0.25)`, color: "rgba(226,217,200,0.5)",
+                    fontFamily: "'Montserrat', sans-serif", fontSize: "8px", fontWeight: 600,
+                    letterSpacing: "0.2em", padding: "12px", textDecoration: "none", transition: "all 0.3s",
+                  }}
+                    onMouseEnter={e => { (e.currentTarget as HTMLAnchorElement).style.borderColor = G; (e.currentTarget as HTMLAnchorElement).style.color = G; }}
+                    onMouseLeave={e => { (e.currentTarget as HTMLAnchorElement).style.borderColor = "rgba(184,160,106,0.25)"; (e.currentTarget as HTMLAnchorElement).style.color = "rgba(226,217,200,0.5)"; }}
+                  >TELEGRAM</a>
+                  <a href="https://wa.me/79060014666" target="_blank" rel="noopener noreferrer" style={{
+                    flex: 1, display: "flex", alignItems: "center", justifyContent: "center", gap: "8px",
+                    background: "transparent", border: `1px solid rgba(184,160,106,0.25)`, color: "rgba(226,217,200,0.5)",
+                    fontFamily: "'Montserrat', sans-serif", fontSize: "8px", fontWeight: 600,
+                    letterSpacing: "0.2em", padding: "12px", textDecoration: "none", transition: "all 0.3s",
+                  }}
+                    onMouseEnter={e => { (e.currentTarget as HTMLAnchorElement).style.borderColor = G; (e.currentTarget as HTMLAnchorElement).style.color = G; }}
+                    onMouseLeave={e => { (e.currentTarget as HTMLAnchorElement).style.borderColor = "rgba(184,160,106,0.25)"; (e.currentTarget as HTMLAnchorElement).style.color = "rgba(226,217,200,0.5)"; }}
+                  >WHATSAPP</a>
+                </div>
+
                 {/* Response promise */}
-                <div style={{ marginTop: "48px", padding: "28px 24px", border: `1px solid rgba(184,160,106,0.15)`, background: "rgba(184,160,106,0.03)" }}>
+                <div style={{ marginTop: "24px", padding: "28px 24px", border: `1px solid rgba(184,160,106,0.15)`, background: "rgba(184,160,106,0.03)" }}>
                   <div style={{ display: "flex", alignItems: "flex-start", gap: "16px" }}>
                     <div style={{ width: "6px", height: "6px", background: G, borderRadius: "50%", marginTop: "5px", flexShrink: 0 }} />
                     <div>
                       <div style={{ fontFamily: "'Montserrat', sans-serif", fontSize: "12px", fontWeight: 600, color: G, marginBottom: "8px", letterSpacing: "0.05em" }}>Ответим в течение 15 минут</div>
                       <div style={{ fontFamily: "'Montserrat', sans-serif", fontSize: "11px", fontWeight: 300, color: "rgba(226,217,200,0.35)", lineHeight: 1.8 }}>
-                        В рабочее время — перезвоним немедленно. После 19:00 — в 9:00 следующего дня.
+                        Консультация бесплатна. В рабочее время — перезвоним немедленно. После 19:00 — в 9:00 следующего дня.
                       </div>
                     </div>
                   </div>

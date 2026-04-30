@@ -128,12 +128,12 @@ export function Footer() {
 
           <div>
             <div style={{ fontFamily: "'Montserrat', sans-serif", fontSize: "8px", fontWeight: 600, letterSpacing: "0.25em", color: "rgba(184,160,106,0.4)", textTransform: "uppercase", marginBottom: "20px" }}>Контакты</div>
-            <a href="tel:+74951234567" style={{ display: "block", fontFamily: "'Montserrat', sans-serif", fontSize: "16px", fontWeight: 300, letterSpacing: "0.06em", color: "#e2d9c8", textDecoration: "none", marginBottom: "10px", transition: "color 0.3s" }}
+            <a href="tel:+79060014666" style={{ display: "block", fontFamily: "'Montserrat', sans-serif", fontSize: "16px", fontWeight: 300, letterSpacing: "0.06em", color: "#e2d9c8", textDecoration: "none", marginBottom: "10px", transition: "color 0.3s" }}
               onMouseEnter={e => (e.currentTarget.style.color = G)}
               onMouseLeave={e => (e.currentTarget.style.color = "#e2d9c8")}
-            >+7 (495) 123-45-67</a>
-            <div style={{ fontFamily: "'Montserrat', sans-serif", fontSize: "10px", color: "rgba(226,217,200,0.25)", marginBottom: "6px" }}>info@todstroy.ru</div>
-            <div style={{ fontFamily: "'Montserrat', sans-serif", fontSize: "10px", color: "rgba(226,217,200,0.25)", marginBottom: "24px" }}>Москва, Рублёвское шоссе, 20</div>
+            >+7 (906) 001-46-66</a>
+            <div style={{ fontFamily: "'Montserrat', sans-serif", fontSize: "10px", color: "rgba(226,217,200,0.25)", marginBottom: "6px" }}>info@todstr.ru</div>
+            <div style={{ fontFamily: "'Montserrat', sans-serif", fontSize: "10px", color: "rgba(226,217,200,0.25)", marginBottom: "24px" }}>Москва, ул. Профсоюзная, д. 56</div>
             <button onClick={() => navigate("/contacts")} style={{
               background: "transparent", border: `1px solid ${G}`, color: G,
               fontFamily: "'Montserrat', sans-serif", fontSize: "8px", fontWeight: 600,
@@ -146,8 +146,8 @@ export function Footer() {
         </div>
 
         <div style={{ borderTop: "1px solid rgba(184,160,106,0.08)", paddingTop: "24px", display: "flex", justifyContent: "space-between", flexWrap: "wrap", gap: "12px" }}>
-          <div style={{ fontFamily: "'Montserrat', sans-serif", fontSize: "9px", letterSpacing: "0.12em", color: "rgba(226,217,200,0.15)" }}>© 2024 TOD STROY. Все права защищены.</div>
-          <div style={{ fontFamily: "'Montserrat', sans-serif", fontSize: "9px", letterSpacing: "0.12em", color: "rgba(226,217,200,0.15)" }}>МОСКВА, РОССИЯ</div>
+          <div style={{ fontFamily: "'Montserrat', sans-serif", fontSize: "9px", letterSpacing: "0.12em", color: "rgba(226,217,200,0.15)" }}>© 2008–2024 ТОД Строй. Все права защищены.</div>
+          <div style={{ fontFamily: "'Montserrat', sans-serif", fontSize: "9px", letterSpacing: "0.12em", color: "rgba(226,217,200,0.15)" }}>Москва, ул. Профсоюзная, д. 56, эт. 17</div>
         </div>
       </div>
     </footer>
