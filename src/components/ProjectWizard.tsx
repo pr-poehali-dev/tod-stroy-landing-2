@@ -546,11 +546,19 @@ export default function ProjectWizard() {
 
   return (
     <section style={{ background: "#0a0a0a", borderTop: "1px solid rgba(184,160,106,0.1)", borderBottom: "1px solid rgba(184,160,106,0.1)" }}>
-      <div style={{ maxWidth: "1100px", margin: "0 auto", padding: "100px 56px" }}>
-        <div style={{ display: "grid", gridTemplateColumns: "1fr 1.1fr", gap: "100px", alignItems: "start" }}>
+      <style>{`
+        @media (max-width: 768px) {
+          .wizard-grid { grid-template-columns: 1fr !important; gap: 48px !important; }
+          .wizard-left { position: static !important; }
+          .wizard-steps { display: none !important; }
+          .wizard-pad { padding: 64px 24px !important; }
+        }
+      `}</style>
+      <div className="wizard-pad" style={{ maxWidth: "1100px", margin: "0 auto", padding: "100px 56px" }}>
+        <div className="wizard-grid" style={{ display: "grid", gridTemplateColumns: "1fr 1.1fr", gap: "100px", alignItems: "start" }}>
 
           {/* LEFT — статичная часть */}
-          <div style={{ position: "sticky", top: "120px" }}>
+          <div className="wizard-left" style={{ position: "sticky", top: "120px" }}>
             <div style={{ fontFamily: mono, fontSize: "8.5px", fontWeight: 600, letterSpacing: "0.3em", color: G, textTransform: "uppercase", marginBottom: "20px" }}>
               Интерактивный анализ
             </div>
@@ -563,7 +571,7 @@ export default function ProjectWizard() {
             </p>
 
             {/* Шаги */}
-            <div style={{ marginTop: "48px", display: "flex", flexDirection: "column", gap: "20px" }}>
+            <div className="wizard-steps" style={{ marginTop: "48px", display: "flex", flexDirection: "column", gap: "20px" }}>
               {[
                 ["01", "Загрузите планировку"],
                 ["02", "Ответьте на 4 вопроса"],
