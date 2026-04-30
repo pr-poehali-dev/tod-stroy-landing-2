@@ -4,6 +4,7 @@ import { Nav, Footer } from "@/components/Layout";
 import Reveal from "@/components/Reveal";
 import { PROJECTS, IMGS } from "@/data/projects";
 import SEO from "@/components/SEO";
+import ProjectWizard from "@/components/ProjectWizard";
 
 const HERO_IMAGE = IMGS.p1;
 const G = "hsl(43,40%,60%)";
@@ -317,6 +318,9 @@ export default function Index() {
           ))}
         </div>
       </section>
+
+      {/* ── PROJECT WIZARD ── */}
+      <ProjectWizard />
 
       {/* ── LEAD FORM ── */}
       <section id="lead" style={{ padding: "100px 56px", background: BG2, position: "relative", overflow: "hidden" }}>
