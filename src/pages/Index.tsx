@@ -53,25 +53,24 @@ export default function Index() {
       />
 
       {/* ── HERO ── split layout */}
-      <section style={{ position: "relative", height: "100vh", display: "flex", overflow: "hidden" }}>
-
+      <section className="hero-split">
         {/* Left text */}
-        <div style={{ position: "relative", zIndex: 2, width: "48%", height: "100%", background: BG, display: "flex", flexDirection: "column", justifyContent: "center", padding: "0 56px", overflow: "hidden" }}>
+        <div className="hero-left">
           <GridBg />
           <div style={{ position: "relative", zIndex: 2 }}>
-            <div style={{ position: "absolute", top: "-180px", right: "0", fontFamily: "monospace", fontSize: "9px", lineHeight: 1.7, color: "rgba(184,160,106,0.4)", textAlign: "right", letterSpacing: "0.05em" }}>
+            <div className="hero-coords" style={{ position: "absolute", top: "-180px", right: "0", fontFamily: "monospace", fontSize: "9px", lineHeight: 1.7, color: "rgba(184,160,106,0.4)", textAlign: "right", letterSpacing: "0.05em" }}>
               55.751244<br />37.618423
             </div>
 
-            <div style={{ fontFamily: "'Montserrat', sans-serif", fontSize: "9px", fontWeight: 500, letterSpacing: "0.3em", color: G, textTransform: "uppercase", marginBottom: "32px" }}>
+            <div style={{ fontFamily: "'Montserrat', sans-serif", fontSize: "9px", fontWeight: 500, letterSpacing: "0.3em", color: G, textTransform: "uppercase", marginBottom: "24px" }}>
               Architecture of Control
             </div>
 
-            <h1 className="animate-fade-up" style={{ fontFamily: "'Montserrat', sans-serif", fontSize: "clamp(36px, 4.5vw, 58px)", fontWeight: 700, lineHeight: 1.12, letterSpacing: "0.04em", color: "#e2d9c8", textTransform: "uppercase", margin: "0 0 6px", opacity: 0 }}>
+            <h1 className="animate-fade-up" style={{ fontFamily: "'Montserrat', sans-serif", fontSize: "clamp(32px, 5vw, 58px)", fontWeight: 700, lineHeight: 1.12, letterSpacing: "0.04em", color: "#e2d9c8", textTransform: "uppercase", margin: "0 0 6px", opacity: 0 }}>
               АРХИТЕКТУРА.<br />СТРОИТЕЛЬСТВО.<br /><span style={{ color: G }}>КОНТРОЛЬ.</span>
             </h1>
 
-            <p className="animate-fade-up delay-200" style={{ fontFamily: "'Montserrat', sans-serif", fontSize: "12px", fontWeight: 300, lineHeight: 1.85, color: "rgba(226,217,200,0.5)", margin: "28px 0 40px", maxWidth: "320px", letterSpacing: "0.03em", opacity: 0 }}>
+            <p className="animate-fade-up delay-200" style={{ fontFamily: "'Montserrat', sans-serif", fontSize: "clamp(12px, 1.5vw, 13px)", fontWeight: 300, lineHeight: 1.85, color: "rgba(226,217,200,0.5)", margin: "20px 0 32px", maxWidth: "320px", letterSpacing: "0.03em", opacity: 0 }}>
               Реализуем сложные проекты премиум-класса для частных и коммерческих клиентов.
             </p>
 
@@ -85,14 +84,14 @@ export default function Index() {
               onMouseLeave={e => { (e.currentTarget as HTMLButtonElement).style.background = "transparent"; (e.currentTarget as HTMLButtonElement).style.color = G; }}
             >СМОТРЕТЬ ПРОЕКТЫ</button>
 
-            <div style={{ position: "absolute", bottom: "-180px", left: 0, fontFamily: "'Montserrat', sans-serif", fontSize: "8px", fontWeight: 400, letterSpacing: "0.3em", color: "rgba(226,217,200,0.2)", textTransform: "uppercase", display: "flex", gap: "24px" }}>
+            <div className="hero-bottom-text" style={{ position: "absolute", bottom: "-180px", left: 0, fontFamily: "'Montserrat', sans-serif", fontSize: "8px", fontWeight: 400, letterSpacing: "0.3em", color: "rgba(226,217,200,0.2)", textTransform: "uppercase", display: "flex", gap: "24px" }}>
               <span>СТРОИТЕЛЬСТВО</span><span style={{ color: "rgba(184,160,106,0.3)" }}>|</span><span>РЕМОНТ</span><span style={{ color: "rgba(184,160,106,0.3)" }}>|</span><span>УПРАВЛЕНИЕ ПРОЕКТАМИ</span>
             </div>
           </div>
         </div>
 
         {/* Right image */}
-        <div style={{ position: "relative", flex: 1, overflow: "hidden" }}>
+        <div className="hero-right">
           <img src={HERO_IMAGE} alt="Дизайнерский ремонт квартир в Москве — ТОД Строй, реализованный объект" style={{ width: "100%", height: "100%", objectFit: "cover" }} />
           <div style={{ position: "absolute", inset: 0, background: "linear-gradient(90deg, rgba(13,13,13,0.6) 0%, rgba(13,13,13,0.1) 40%, rgba(13,13,13,0.2) 100%)" }} />
           <div style={{ position: "absolute", bottom: "48px", right: "40px", fontFamily: "'Montserrat', sans-serif", fontSize: "11px", fontWeight: 300, color: "rgba(226,217,200,0.5)", letterSpacing: "0.1em", display: "flex", alignItems: "center", gap: "6px" }}>
@@ -106,8 +105,8 @@ export default function Index() {
 
       {/* ── STATS ── */}
       <Reveal>
-        <div style={{ borderTop: "1px solid rgba(184,160,106,0.12)", borderBottom: "1px solid rgba(184,160,106,0.12)", padding: "44px 56px" }}>
-          <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(150px, 1fr))", gap: "32px", maxWidth: "1000px", margin: "0 auto" }}>
+        <div style={{ borderTop: "1px solid rgba(184,160,106,0.12)", borderBottom: "1px solid rgba(184,160,106,0.12)", padding: "clamp(28px,5vw,44px) clamp(16px,5vw,56px)" }}>
+          <div className="stats-grid" style={{ maxWidth: "1000px", margin: "0 auto" }}>
             {[["16+", "лет на рынке"], ["200+", "реализованных объектов"], ["2008", "год основания"], ["98%", "проектов сданы в срок"]].map(([num, label]) => (
               <div key={label} style={{ display: "flex", flexDirection: "column", gap: "6px" }}>
                 <div style={{ fontFamily: "'Montserrat', sans-serif", fontSize: "38px", fontWeight: 700, color: G, lineHeight: 1, letterSpacing: "-0.02em" }}>{num}</div>
@@ -119,10 +118,10 @@ export default function Index() {
       </Reveal>
 
       {/* ── ABOUT ── */}
-      <section id="about" style={{ padding: "100px 56px", background: BG2 }}>
+      <section id="about" style={{ padding: "clamp(48px,8vw,100px) clamp(16px,5vw,56px)", background: BG2 }}>
         <div style={{ maxWidth: "1100px", margin: "0 auto" }}>
           <Reveal>
-            <div style={{ display: "grid", gridTemplateColumns: "1fr 1.2fr", gap: "80px", alignItems: "start" }}>
+            <div className="grid-2col">
               <div>
                 <div style={{ fontFamily: "'Montserrat', sans-serif", fontSize: "8.5px", fontWeight: 600, letterSpacing: "0.3em", color: G, textTransform: "uppercase", marginBottom: "20px" }}>О компании</div>
                 <h2 style={{ fontFamily: "'Montserrat', sans-serif", fontSize: "clamp(28px, 3vw, 42px)", fontWeight: 700, textTransform: "uppercase", letterSpacing: "0.04em", color: "#e2d9c8", margin: "0 0 28px", lineHeight: 1.15 }}>
@@ -159,7 +158,7 @@ export default function Index() {
       </section>
 
       {/* ── PROJECTS PREVIEW ── */}
-      <section id="projects" style={{ padding: "100px 56px 0", background: BG }}>
+      <section id="projects" style={{ padding: "clamp(48px,8vw,100px) clamp(16px,5vw,56px) 0", background: BG }}>
         <Reveal>
           <div style={{ maxWidth: "1100px", margin: "0 auto 48px", display: "flex", justifyContent: "space-between", alignItems: "flex-end" }}>
             <div>
@@ -178,7 +177,7 @@ export default function Index() {
           </div>
         </Reveal>
 
-        <div style={{ maxWidth: "1100px", margin: "0 auto 100px", display: "grid", gridTemplateColumns: "1fr 320px", gap: "2px" }}>
+        <div style={{ maxWidth: "1100px", margin: "0 auto clamp(48px,8vw,100px)", display: "grid", gridTemplateColumns: "1fr min(320px, 35%)", gap: "2px" }} className="projects-preview-grid">
           <Reveal>
             <div style={{ position: "relative", height: "560px", overflow: "hidden", cursor: "pointer" }} onClick={() => navigate(`/projects/${PROJECTS[activeProject].id}`)}>
               <img src={PROJECTS[activeProject].cover} alt={`Ремонт квартиры — проект ${PROJECTS[activeProject].title}, ${PROJECTS[activeProject].location}`}
@@ -228,7 +227,7 @@ export default function Index() {
       </section>
 
       {/* ── SERVICES PREVIEW ── */}
-      <section id="services" style={{ padding: "100px 56px", background: BG2 }}>
+      <section id="services" style={{ padding: "clamp(48px,8vw,100px) clamp(16px,5vw,56px)", background: BG2 }}>
         <Reveal>
           <div style={{ maxWidth: "1100px", margin: "0 auto" }}>
             <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-end", marginBottom: "56px" }}>
@@ -264,7 +263,7 @@ export default function Index() {
       </section>
 
       {/* ── PROCESS ── */}
-      <section id="process" style={{ padding: "100px 56px", background: "#0a0a0a" }}>
+      <section id="process" style={{ padding: "clamp(48px,8vw,100px) clamp(16px,5vw,56px)", background: "#0a0a0a" }}>
         <div style={{ maxWidth: "1100px", margin: "0 auto" }}>
           <Reveal>
             <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-end", marginBottom: "64px" }}>
@@ -298,12 +297,12 @@ export default function Index() {
 
       {/* ── CATEGORIES ── */}
       <section style={{ padding: "0" }}>
-        <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "2px" }}>
+        <div className="comm-grid">
           {[
             { img: IMGS.p1, title: "Частные резиденции", sub: "Дома и особняки от 300 м²", path: "/residential" },
             { img: IMGS.p2, title: "Коммерческие объекты", sub: "Офисы, торговые центры, гостиницы", path: "/commercial" },
           ].map(item => (
-            <div key={item.path} onClick={() => navigate(item.path)} style={{ position: "relative", height: "440px", overflow: "hidden", cursor: "pointer" }}>
+            <div key={item.path} onClick={() => navigate(item.path)} style={{ position: "relative", height: "clamp(220px, 40vw, 440px)", overflow: "hidden", cursor: "pointer" }}>
               <img src={item.img} alt={`${item.title} — ремонт в Москве, ТОД Строй`}
                 style={{ width: "100%", height: "100%", objectFit: "cover", transition: "transform 0.8s ease" }}
                 onMouseEnter={e => (e.currentTarget.style.transform = "scale(1.04)")}
@@ -323,7 +322,7 @@ export default function Index() {
       <ProjectWizard />
 
       {/* ── LEAD FORM ── */}
-      <section id="lead" style={{ padding: "100px 56px", background: BG2, position: "relative", overflow: "hidden" }}>
+      <section id="lead" style={{ padding: "clamp(48px,8vw,100px) clamp(16px,5vw,56px)", background: BG2, position: "relative", overflow: "hidden" }}>
         <div style={{ position: "absolute", inset: 0, pointerEvents: "none" }}>
           <GridBg />
         </div>

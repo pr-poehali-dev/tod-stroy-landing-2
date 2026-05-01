@@ -31,16 +31,19 @@ export default function Projects() {
       <div style={{ background: BG, paddingTop: "68px" }}>
 
         {/* Hero */}
-        <section style={{ padding: "80px 56px 64px", borderBottom: "1px solid rgba(184,160,106,0.1)" }}>
+        <section style={{ padding: "clamp(40px,7vw,80px) clamp(16px,5vw,56px) clamp(32px,5vw,64px)", borderBottom: "1px solid rgba(184,160,106,0.1)" }}>
           <Reveal>
             <div style={{ maxWidth: "1100px", margin: "0 auto" }}>
-              <div style={{ fontFamily: "'Montserrat', sans-serif", fontSize: "8.5px", fontWeight: 600, letterSpacing: "0.3em", color: G, textTransform: "uppercase", marginBottom: "20px" }}>
-                TOD STROY — портфолио
+              <div style={{ display: "flex", alignItems: "center", gap: "16px", marginBottom: "20px" }}>
+                <div style={{ width: "40px", height: "1px", background: G }} />
+                <div style={{ fontFamily: "'Montserrat', sans-serif", fontSize: "8.5px", fontWeight: 600, letterSpacing: "0.3em", color: G, textTransform: "uppercase" }}>
+                  TOD STROY — портфолио
+                </div>
               </div>
-              <h1 style={{ fontFamily: "'Montserrat', sans-serif", fontSize: "clamp(40px, 5vw, 72px)", fontWeight: 700, textTransform: "uppercase", letterSpacing: "0.04em", color: "#e2d9c8", margin: "0 0 28px", lineHeight: 1.1 }}>
+              <h1 style={{ fontFamily: "'Montserrat', sans-serif", fontSize: "clamp(36px, 5vw, 72px)", fontWeight: 700, textTransform: "uppercase", letterSpacing: "0.04em", color: "#e2d9c8", margin: "0 0 24px", lineHeight: 1.1 }}>
                 РЕАЛИЗОВАННЫЕ<br /><span style={{ color: G }}>ОБЪЕКТЫ</span>
               </h1>
-              <p style={{ fontFamily: "'Montserrat', sans-serif", fontSize: "13px", fontWeight: 300, color: "rgba(226,217,200,0.45)", lineHeight: 1.9, maxWidth: "480px" }}>
+              <p style={{ fontFamily: "'Montserrat', sans-serif", fontSize: "clamp(12px,1.5vw,13px)", fontWeight: 300, color: "rgba(226,217,200,0.45)", lineHeight: 1.9, maxWidth: "480px" }}>
                 Каждый проект — это задача со своим масштабом, требованиями и уровнем ответственности. Мы не усредняем — мы решаем.
               </p>
             </div>
@@ -48,13 +51,13 @@ export default function Projects() {
         </section>
 
         {/* Filter */}
-        <section style={{ padding: "40px 56px 0", maxWidth: "1100px", margin: "0 auto" }}>
-          <div style={{ display: "flex", gap: "0", borderBottom: "1px solid rgba(184,160,106,0.1)", marginBottom: "64px" }}>
+        <section style={{ padding: "32px clamp(16px,5vw,56px) 0", maxWidth: "1100px", margin: "0 auto" }}>
+          <div style={{ display: "flex", gap: "0", borderBottom: "1px solid rgba(184,160,106,0.1)", marginBottom: "clamp(32px,5vw,64px)", overflowX: "auto" }}>
             {FILTERS.map(f => (
-              <button key={f.key} onClick={() => setFilter(f.key)} style={{
+              <button key={f.key} onClick={() => setFilter(f.key)} className="filter-btn" style={{
                 background: "none", border: "none", cursor: "pointer",
                 fontFamily: "'Montserrat', sans-serif", fontSize: "9px", fontWeight: 600,
-                letterSpacing: "0.25em", padding: "14px 28px 14px 0",
+                letterSpacing: "0.25em", padding: "14px 28px 14px 0", whiteSpace: "nowrap",
                 color: filter === f.key ? G : "rgba(226,217,200,0.3)",
                 borderBottom: filter === f.key ? `1px solid ${G}` : "1px solid transparent",
                 marginBottom: "-1px", transition: "all 0.3s",
@@ -64,12 +67,13 @@ export default function Projects() {
         </section>
 
         {/* Grid */}
-        <section style={{ padding: "0 56px 120px", maxWidth: "1100px", margin: "0 auto" }}>
-          <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(340px, 1fr))", gap: "2px" }}>
+        <section style={{ padding: "0 clamp(16px,5vw,56px) clamp(64px,10vw,120px)", maxWidth: "1100px", margin: "0 auto" }}>
+          <div className="projects-grid">
             {filtered.map((p, i) => (
               <Reveal key={p.id} delay={i * 80}>
                 <div
                   onClick={() => navigate(`/projects/${p.id}`)}
+                  className={i === 0 ? "project-card-tall" : "project-card"}
                   style={{ position: "relative", height: i === 0 ? "560px" : "420px", overflow: "hidden", cursor: "pointer" }}
                 >
                   <img src={p.cover} alt={`${p.title} — ${p.typeLabel} ремонт в ${p.location}, ТОД Строй`}
@@ -79,7 +83,6 @@ export default function Projects() {
                   />
                   <div style={{ position: "absolute", inset: 0, background: "linear-gradient(to top, rgba(13,13,13,0.92) 0%, rgba(13,13,13,0.1) 55%)" }} />
 
-                  {/* Hover overlay */}
                   <div className="project-hover-overlay" style={{
                     position: "absolute", inset: 0,
                     background: "rgba(13,13,13,0.0)",
@@ -100,14 +103,14 @@ export default function Projects() {
                     >СМОТРЕТЬ ПРОЕКТ</span>
                   </div>
 
-                  <div style={{ position: "absolute", bottom: 0, left: 0, right: 0, padding: "28px 28px" }}>
+                  <div style={{ position: "absolute", bottom: 0, left: 0, right: 0, padding: "clamp(16px,3vw,28px)" }}>
                     <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-end" }}>
                       <div>
                         <div style={{ fontFamily: "'Montserrat', sans-serif", fontSize: "7.5px", fontWeight: 600, letterSpacing: "0.3em", color: G, textTransform: "uppercase", marginBottom: "8px" }}>
                           {p.typeLabel} · {p.location}
                         </div>
-                        <div style={{ fontFamily: "'Montserrat', sans-serif", fontSize: "20px", fontWeight: 700, letterSpacing: "0.04em", textTransform: "uppercase", color: "#e2d9c8" }}>{p.title}</div>
-                        <div style={{ display: "flex", gap: "24px", marginTop: "10px" }}>
+                        <div style={{ fontFamily: "'Montserrat', sans-serif", fontSize: "clamp(16px,2.5vw,20px)", fontWeight: 700, letterSpacing: "0.04em", textTransform: "uppercase", color: "#e2d9c8" }}>{p.title}</div>
+                        <div style={{ display: "flex", gap: "clamp(12px,2vw,24px)", marginTop: "10px", flexWrap: "wrap" }}>
                           <span style={{ fontFamily: "'Montserrat', sans-serif", fontSize: "11px", fontWeight: 300, color: "rgba(226,217,200,0.4)" }}>{p.area}</span>
                           <span style={{ fontFamily: "'Montserrat', sans-serif", fontSize: "11px", fontWeight: 300, color: "rgba(226,217,200,0.4)" }}>{p.duration}</span>
                         </div>
@@ -122,11 +125,11 @@ export default function Projects() {
         </section>
 
         {/* CTA */}
-        <section style={{ padding: "80px 56px", background: "#111", borderTop: "1px solid rgba(184,160,106,0.1)" }}>
+        <section style={{ padding: "clamp(48px,8vw,80px) clamp(16px,5vw,56px)", background: "#111", borderTop: "1px solid rgba(184,160,106,0.1)" }}>
           <Reveal>
             <div style={{ maxWidth: "600px", margin: "0 auto", textAlign: "center" }}>
               <div style={{ fontFamily: "'Montserrat', sans-serif", fontSize: "8.5px", fontWeight: 600, letterSpacing: "0.3em", color: G, textTransform: "uppercase", marginBottom: "20px" }}>Следующий шаг</div>
-              <h2 style={{ fontFamily: "'Montserrat', sans-serif", fontSize: "clamp(26px, 3vw, 40px)", fontWeight: 700, textTransform: "uppercase", letterSpacing: "0.04em", color: "#e2d9c8", margin: "0 0 24px" }}>
+              <h2 style={{ fontFamily: "'Montserrat', sans-serif", fontSize: "clamp(24px, 3vw, 40px)", fontWeight: 700, textTransform: "uppercase", letterSpacing: "0.04em", color: "#e2d9c8", margin: "0 0 24px" }}>
                 ГОТОВЫ ОБСУДИТЬ<br /><span style={{ color: G }}>ВАШ ОБЪЕКТ?</span>
               </h2>
               <button onClick={() => navigate("/contacts")} style={{
@@ -140,7 +143,6 @@ export default function Projects() {
             </div>
           </Reveal>
         </section>
-
       </div>
     </Layout>
   );
