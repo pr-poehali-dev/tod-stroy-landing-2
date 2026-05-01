@@ -12,15 +12,30 @@ const BG = "#0d0d0d";
 const BG2 = "#111111";
 
 const GridBg = () => (
-  <svg style={{ position: "absolute", inset: 0, width: "100%", height: "100%", opacity: 0.07 }} viewBox="0 0 800 500" preserveAspectRatio="xMidYMid slice">
-    <line x1="0" y1="120" x2="800" y2="120" stroke="#b8a06a" strokeWidth="0.5" />
-    <line x1="0" y1="380" x2="800" y2="380" stroke="#b8a06a" strokeWidth="0.5" />
-    <line x1="200" y1="0" x2="200" y2="500" stroke="#b8a06a" strokeWidth="0.5" />
-    <line x1="600" y1="0" x2="600" y2="500" stroke="#b8a06a" strokeWidth="0.5" />
-    <circle cx="400" cy="250" r="160" stroke="#b8a06a" strokeWidth="0.5" fill="none" />
-    <circle cx="400" cy="250" r="80" stroke="#b8a06a" strokeWidth="0.3" fill="none" />
-    <text x="342" y="55" fill="#b8a06a" fontSize="7" fontFamily="monospace" opacity="0.8">55.751244</text>
-    <text x="342" y="75" fill="#b8a06a" fontSize="7" fontFamily="monospace" opacity="0.8">37.618423</text>
+  <svg style={{ position: "absolute", inset: 0, width: "100%", height: "100%", opacity: 0.18 }} viewBox="0 0 800 500" preserveAspectRatio="xMidYMid slice">
+    {/* Main grid lines */}
+    <line x1="0" y1="120" x2="800" y2="120" stroke="#b8a06a" strokeWidth="0.8" />
+    <line x1="0" y1="380" x2="800" y2="380" stroke="#b8a06a" strokeWidth="0.8" />
+    <line x1="200" y1="0" x2="200" y2="500" stroke="#b8a06a" strokeWidth="0.8" />
+    <line x1="600" y1="0" x2="600" y2="500" stroke="#b8a06a" strokeWidth="0.8" />
+    {/* Diagonal accent lines */}
+    <line x1="0" y1="0" x2="200" y2="120" stroke="#b8a06a" strokeWidth="0.4" opacity="0.5" />
+    <line x1="600" y1="0" x2="800" y2="120" stroke="#b8a06a" strokeWidth="0.4" opacity="0.5" />
+    {/* Circles */}
+    <circle cx="400" cy="250" r="160" stroke="#b8a06a" strokeWidth="0.8" fill="none" />
+    <circle cx="400" cy="250" r="80" stroke="#b8a06a" strokeWidth="0.5" fill="none" />
+    <circle cx="400" cy="250" r="4" fill="#b8a06a" opacity="0.6" />
+    {/* Corner marks */}
+    <line x1="0" y1="0" x2="40" y2="0" stroke="#b8a06a" strokeWidth="1" />
+    <line x1="0" y1="0" x2="0" y2="40" stroke="#b8a06a" strokeWidth="1" />
+    <line x1="760" y1="0" x2="800" y2="0" stroke="#b8a06a" strokeWidth="1" />
+    <line x1="800" y1="0" x2="800" y2="40" stroke="#b8a06a" strokeWidth="1" />
+    {/* Coord labels */}
+    <text x="342" y="48" fill="#b8a06a" fontSize="8" fontFamily="monospace" opacity="0.9">55.751244</text>
+    <text x="342" y="62" fill="#b8a06a" fontSize="8" fontFamily="monospace" opacity="0.9">37.618423</text>
+    {/* Cross-hair at center */}
+    <line x1="390" y1="250" x2="410" y2="250" stroke="#b8a06a" strokeWidth="0.6" />
+    <line x1="400" y1="240" x2="400" y2="260" stroke="#b8a06a" strokeWidth="0.6" />
   </svg>
 );
 

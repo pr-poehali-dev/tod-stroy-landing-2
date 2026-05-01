@@ -24,16 +24,13 @@
   <line x1="4" y1="32" x2="9" y2="32" stroke="#b8a06a" stroke-width="0.6" opacity="0.35"/>
   <line x1="55" y1="32" x2="60" y2="32" stroke="#b8a06a" stroke-width="0.6" opacity="0.35"/>
 
-  <!-- Letter E — geometric architectural form -->
-  <!-- Vertical bar -->
-  <rect x="15" y="13" width="5.5" height="38" fill="#b8a06a"/>
+  <!-- Letter T — geometric architectural form -->
   <!-- Top horizontal bar -->
-  <rect x="15" y="13" width="28" height="5.5" fill="#b8a06a"/>
-  <!-- Middle horizontal bar (slightly shorter) -->
-  <rect x="15" y="29.2" width="22" height="5" fill="#b8a06a"/>
-  <!-- Bottom horizontal bar -->
-  <rect x="15" y="45.5" width="28" height="5.5" fill="#b8a06a"/>
+  <rect x="11" y="13" width="42" height="5.5" fill="#b8a06a"/>
+  <!-- Vertical bar centered -->
+  <rect x="29.25" y="13" width="5.5" height="38" fill="#b8a06a"/>
 
-  <!-- Accent dot — architectural detail -->
-  <rect x="46" y="29.5" width="2.5" height="2.5" fill="#b8a06a" opacity="0.45"/>
+  <!-- Accent dots — architectural details -->
+  <rect x="11" y="49" width="2.5" height="2.5" fill="#b8a06a" opacity="0.4"/>
+  <rect x="50.5" y="49" width="2.5" height="2.5" fill="#b8a06a" opacity="0.4"/>
 </svg>
