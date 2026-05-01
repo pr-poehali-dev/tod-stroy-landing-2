@@ -87,7 +87,7 @@ export default function Services() {
                   {/* Text side */}
                   <div style={{ padding: i % 2 === 0 ? "0 56px 0 0" : "0 0 0 56px", order: i % 2 === 0 ? 1 : 2, display: "flex", flexDirection: "column", justifyContent: "center" }}>
                     <div style={{ fontFamily: "'Montserrat', sans-serif", fontSize: "52px", fontWeight: 800, color: "rgba(184,160,106,0.08)", lineHeight: 1, marginBottom: "-12px" }}>{s.num}</div>
-                    <div style={{ fontFamily: "'Montserrat', sans-serif", fontSize: "8.5px", fontWeight: 600, letterSpacing: "0.3em", color: G, textTransform: "uppercase", marginBottom: "12px" }}>{s.subtitle}</div>
+                    <div style={{ fontFamily: "'Montserrat', sans-serif", fontSize: "13px", fontWeight: 600, letterSpacing: "0.2em", color: G, textTransform: "uppercase", marginBottom: "12px" }}>{s.subtitle}</div>
                     <h2 style={{ fontFamily: "'Montserrat', sans-serif", fontSize: "clamp(28px, 3vw, 44px)", fontWeight: 700, textTransform: "uppercase", letterSpacing: "0.04em", color: "#e2d9c8", margin: "0 0 24px", lineHeight: 1.1 }}>{s.title}</h2>
                     <div style={{ width: "28px", height: "1px", background: G, marginBottom: "24px" }} />
                     <p style={{ fontFamily: "'Montserrat', sans-serif", fontSize: "13px", fontWeight: 300, color: "rgba(226,217,200,0.5)", lineHeight: 1.9, margin: "0 0 32px" }}>{s.text}</p>
